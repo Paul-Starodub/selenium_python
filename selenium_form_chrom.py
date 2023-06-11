@@ -12,21 +12,26 @@ options.add_argument(
 driver = webdriver.Chrome(options=options)
 
 try:
-
     driver.get(
         url="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fmy-learning.w3schools.com"
     )
-    time.sleep(5)
+    time.sleep(1)
 
     email_input = driver.find_element(By.NAME, "email")
     email_input.clear()
-    email_input.send_keys("am@gmail.com")
-    time.sleep(5)
+    email_input.send_keys("amoral@gmail.com")
+    time.sleep(1)
 
-    password_input = driver.find_element(By.CSS_SELECTOR, "input#current-password")
+    password_input = driver.find_element(
+        By.CSS_SELECTOR, "input#current-password"
+    )
     password_input.clear()
-    password_input.send_keys("12345")
-    time.sleep(5)
+    password_input.send_keys("bbbb789R")
+    time.sleep(1)
+
+    login_button = driver.find_element(By.CSS_SELECTOR, ".LoginModal_cta_bottom_box_button_login__5Fbwv"
+    ).click()
+    time.sleep(7)
 
 except Exception as e:
     print(e)
