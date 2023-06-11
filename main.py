@@ -19,7 +19,7 @@ options = webdriver.ChromeOptions()
 options.add_argument(f"user-agent={useragent.random}")
 
 # set proxy
-options.add_argument('--proxy-server=138.128.91.65:8000')
+options.add_argument("--proxy-server=212.237.16.60:3128")  # use own proxy
 
 driver = webdriver.Chrome(options=options)
 
@@ -40,7 +40,7 @@ try:
     # driver.save_screenshot("2.png")
     # time.sleep(2)
 
-    driver.get(url="https://www.whatismyipaddress.com/")
+    driver.get(url="https://ipinfo.io/")
     time.sleep(10)
 
 except Exception as e:
