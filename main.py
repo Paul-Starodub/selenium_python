@@ -1,19 +1,25 @@
 from selenium import webdriver
 import time
+import random
 
 
 # url = "https://www.instagram.com/"
 
-#options
+user_agents_lists = ["hello_world", "best_of_the_best", "python_today"]
+
+# options
 options = webdriver.ChromeOptions()
-options.add_argument("user-agent=Hello World")
+# options.add_argument("user-agent=Hello World")
+options.add_argument(f"user-agent={random.choice(user_agents_lists)}")
 
 driver = webdriver.Chrome(options=options)
 
 
 try:
     # driver.get(url)
-    driver.get(url="https://www.whatismybrowser.com/detect/what-is-my-user-agent")
+    driver.get(
+        url="https://www.whatismybrowser.com/detect/what-is-my-user-agent"
+    )
     time.sleep(5)
 
     # driver.refresh()
