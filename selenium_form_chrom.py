@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 
 # options
@@ -27,11 +28,15 @@ try:
     )
     password_input.clear()
     password_input.send_keys("bbbb789R")
-    time.sleep(1)
+    password_input.send_keys(Keys.ENTER)
+    time.sleep(6)
 
-    login_button = driver.find_element(By.CSS_SELECTOR, ".LoginModal_cta_bottom_box_button_login__5Fbwv"
-    ).click()
-    time.sleep(7)
+
+
+    # login_button = driver.find_element(
+    #     By.CSS_SELECTOR, ".LoginModal_cta_bottom_box_button_login__5Fbwv"
+    # ).click()
+    # time.sleep(7)
 
 except Exception as e:
     print(e)
