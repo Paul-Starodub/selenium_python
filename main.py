@@ -18,15 +18,18 @@ options = webdriver.ChromeOptions()
 # options.add_argument(f"user-agent={useragent.opera}")
 options.add_argument(f"user-agent={useragent.random}")
 
+# set proxy
+options.add_argument('--proxy-server=138.128.91.65:8000')
+
 driver = webdriver.Chrome(options=options)
 
 
 try:
     # driver.get(url)
-    driver.get(
-        url="https://www.whatismybrowser.com/detect/what-is-my-user-agent"
-    )
-    time.sleep(5)
+    # driver.get(
+    #     url="https://www.whatismybrowser.com/detect/what-is-my-user-agent"
+    # )
+    # time.sleep(5)
 
     # driver.refresh()
     # time.sleep(2)
@@ -36,6 +39,9 @@ try:
     # time.sleep(5)
     # driver.save_screenshot("2.png")
     # time.sleep(2)
+
+    driver.get(url="https://www.whatismyipaddress.com/")
+    time.sleep(10)
 
 except Exception as e:
     print(e)
