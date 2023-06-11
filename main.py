@@ -2,8 +2,14 @@ from selenium import webdriver
 import time
 
 
-url = "https://www.instagram.com/"
-driver = webdriver.Chrome()
+# url = "https://www.instagram.com/"
+
+#options
+options = webdriver.ChromeOptions()
+options.add_argument("user-agent=Hello World")
+
+driver = webdriver.Chrome(options=options)
+
 
 try:
     # driver.get(url)
